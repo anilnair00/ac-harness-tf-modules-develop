@@ -1,5 +1,5 @@
 # Create Aws connector using irsa Authentication
-resource "harness_platform_connector_aws" "this" {
+resource "harness_platform_connector_azure_cloud_provider" "inherit_from_delegate_user_assigned_managed_identity" {
   for_each = { for connector in var.connectors : connector.identifier => connector }
 
   identifier  = each.value.identifier
@@ -8,15 +8,20 @@ resource "harness_platform_connector_aws" "this" {
   org_id      = each.value.org_id
   project_id  = each.value.project_id
 
-  cross_account_access {
-    role_arn = each.value.cross_account_access_role_arn
-    # external_id = ""
+  credentials {
+    type = "InheritFromDelegate"
+    azure_inherit_from_delegate_details {
+      auth {
+        azure_msi_auth_ua {
+          client_id = "client_id"
+        }
+        type = "UserAssignedManagedIdentity"
+      }
+    }
   }
-
-  irsa {
-    delegate_selectors = ["${each.value.harnessdelegate}"]
-    region             = each.value.region
-  }
+  azure_environment_type = "AZURE"
+  delegate_selectors     = ["harness-delegate"]
+}
 
   tags = var.tags
 }
