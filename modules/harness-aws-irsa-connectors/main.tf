@@ -22,6 +22,3 @@ resource "harness_platform_connector_azure_cloud_provider" "inherit_from_delegat
   azure_environment_type = "AZURE"
   delegate_selectors     = ["harness-delegate"]
 }
-
-  tags = var.tags
-}
