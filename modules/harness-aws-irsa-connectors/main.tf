@@ -7,7 +7,7 @@ resource "harness_platform_connector_azure_cloud_provider" "inherit_from_delegat
   description = each.value.description
   org_id      = each.value.org_id
   project_id  = each.value.project_id
-
+  tags = var.tags 
   credentials {
     type = "InheritFromDelegate"
     azure_inherit_from_delegate_details {
@@ -21,7 +21,6 @@ resource "harness_platform_connector_azure_cloud_provider" "inherit_from_delegat
   }
   azure_environment_type = "AZURE"
 #  delegate_selectors     = ["harness-delegate"]
-     delegate_selectors   = ["$(each.value.harnessdelegate}"]
-     region               = each.value.region
-   tags = var.tags 
+  delegate_selectors   = ["$(each.value.harnessdelegate}"]
+#  region               = each.value.region
 }
