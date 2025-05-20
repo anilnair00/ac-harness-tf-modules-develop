@@ -21,6 +21,9 @@ resource "harness_platform_connector_azure_cloud_provider" "inherit_from_delegat
   }
   azure_environment_type = "AZURE"
 #  delegate_selectors     = ["harness-delegate"]
-   delegate_selectors     = ["$(each.value.harnessdelegate}"]
-   
+   irsa {
+     delegate_selectors     = ["$(each.value.harnessdelegate}"]
+      region                = each.value.region
+   }
+   tags = var.tags 
 }
