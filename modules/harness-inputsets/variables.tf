@@ -5,7 +5,7 @@ variable "input_sets" {
     org_id      = string
     project_id  = string
     name        = string
-    env         = string
+ #   env         = string
     connector   = string
     pipeline_id = string
     yaml        = string
