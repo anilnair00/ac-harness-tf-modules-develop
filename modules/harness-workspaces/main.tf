@@ -1,19 +1,19 @@
-resource "harness_platform_workspace" "workspace" {
+resource "harness_platform_workspace" "workspaces" {
 #  for_each = { for idx, workspace in var.workspaces : idx => workspace }
-  identifier              = var.workspace.identifier
-  name                    = var.workspace.name
-  org_id                  = var.workspace.org_id
-  project_id              = var.workspace.project_id
-  cost_estimation_enabled = var.workspace.cost_estimation_enabled
-  project_name            = var.workspace.project_name
-  provisioner_type        = var.workspace.provisioner_type
-  repository              = var.workspace.repository
-  repository_path         = var.workspace.repository_path
-  repository_branch       = var.workspace.repository_branch
-  provisioner_version     = var.workspace.provisioner_version
-  provider_connector      = var.workspace.provider_connector
-  repository_connector    = var.workspace.repository_connector
-  description             = try(var.workspace.description, null)
+  identifier              = var.workspaces.identifier
+  name                    = var.workspaces.name
+  org_id                  = var.workspaces.org_id
+  project_id              = var.workspaces.project_id
+  cost_estimation_enabled = var.workspaces.cost_estimation_enabled
+  project_name            = var.workspaces.project_name
+  provisioner_type        = var.workspaces.provisioner_type
+  repository              = var.workspaces.repository
+  repository_path         = var.workspaces.repository_path
+  repository_branch       = var.workspaces.repository_branch
+  provisioner_version     = var.workspaces.provisioner_version
+  provider_connector      = var.workspaces.provider_connector
+  repository_connector    = var.workspaces.repository_connector
+  description             = try(var.workspaces.description, null)
 
   #################################
   # Terraform Variables (Optional)
