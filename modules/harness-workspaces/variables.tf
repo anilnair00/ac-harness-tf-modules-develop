@@ -1,5 +1,5 @@
 variable "workspaces" {
-  type = list(object({
+  type = object({
     identifier              = string
     name                    = optional(string)
     repository              = string
