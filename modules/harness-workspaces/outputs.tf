@@ -1,3 +1,3 @@
-output "workspace_ids" {
-  value = [for ws in harness_platform_workspace.workspace : ws.id]
+output "workspace_id" {
+  value = harness_platform_workspace.workspace.id
 }
