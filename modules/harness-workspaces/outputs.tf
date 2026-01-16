@@ -1,3 +1,3 @@
 output "workspace_id" {
-  value = harness_platform_workspace.workspace.id
+  value = harness_platform_workspaces.workspaces.id
 }
