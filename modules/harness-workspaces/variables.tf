@@ -14,15 +14,5 @@ variable "workspaces" {
     provider_connector      = string
     repository_connector    = string
     description             = optional(string)
-    terraform_variables = list(object({
-      key        = string
-      value      = string
-      value_type = string # Required by the resource
-    }))
-    environment_variables = list(object({
-      key        = string
-      value      = string
-      value_type = string # Required by the resource
-    }))
   })
 }
