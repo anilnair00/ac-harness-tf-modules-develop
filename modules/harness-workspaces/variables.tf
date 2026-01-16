@@ -24,5 +24,5 @@ variable "workspaces" {
       value      = string
       value_type = string # Required by the resource
     }))
-  }))
+  })
 }
