@@ -14,5 +14,6 @@ resource "harness_platform_workspace" "workspaces" {
   provider_connector      = var.workspaces.provider_connector
   repository_connector    = var.workspaces.repository_connector
   description             = try(var.workspaces.description, null)
+}
 
 
