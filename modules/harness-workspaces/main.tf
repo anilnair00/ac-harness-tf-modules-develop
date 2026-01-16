@@ -5,7 +5,7 @@ resource "harness_platform_workspace" "workspaces" {
   org_id                  = var.workspaces.org_id
   project_id              = var.workspaces.project_id
   cost_estimation_enabled = var.workspaces.cost_estimation_enabled
-  project_name            = var.workspaces.project_name
+#  project_name            = var.workspaces.project_name
   provisioner_type        = var.workspaces.provisioner_type
   repository              = var.workspaces.repository
   repository_path         = var.workspaces.repository_path
