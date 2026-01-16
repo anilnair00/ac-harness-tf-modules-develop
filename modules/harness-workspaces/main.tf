@@ -15,23 +15,4 @@ resource "harness_platform_workspace" "workspaces" {
   repository_connector    = var.workspaces.repository_connector
   description             = try(var.workspaces.description, null)
 
-  #################################
-  # Terraform Variables (Optional)
-  #################################
-  terraform_variable {
-    for_each = var.workspace.terraform_variables
-    key        = terraform_variable.value.key
-    value      = terraform_variable.value.value
-    value_type = terraform_variable.value.value_type
-  }
 
-  #################################
-  # Environment Variables (Optional)
-  #################################
-  environment_variable {
-    for_each = var.workspace.environment_variables
-    key        = environment_variable.value.key
-    value      = environment_variable.value.value
-    value_type = environment_variable.value.value_type
-  }
-}
