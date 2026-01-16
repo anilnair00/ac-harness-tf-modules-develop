@@ -1,4 +1,4 @@
-variable "workspace" {
+variable "workspaces" {
   type = object({
     identifier              = string
     name                    = optional(string)
