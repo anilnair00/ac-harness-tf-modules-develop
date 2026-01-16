@@ -1,4 +1,4 @@
-resource "harness_platform_workspaces" "workspaces" {
+resource "harness_platform_workspace" "workspaces" {
 #  for_each = { for idx, workspace in var.workspaces : idx => workspace }
   identifier              = var.workspaces.identifier
   name                    = var.workspaces.name
