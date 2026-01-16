@@ -6,7 +6,7 @@ variable "workspaces" {
     provisioner_type        = string
     org_id                  = string
     project_id              = string
-    project_name            = string
+#    project_name            = string
     cost_estimation_enabled = bool
     repository_path         = string
     repository_branch       = string
